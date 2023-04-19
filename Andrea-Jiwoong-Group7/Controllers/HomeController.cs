@@ -18,11 +18,6 @@ namespace Andrea_Jiwoong_Group7.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [HttpGet]
         public IActionResult BookTicket()
         {
@@ -30,10 +25,16 @@ namespace Andrea_Jiwoong_Group7.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostBookTicket(string departureStn, string arrivalStn)
+        public IActionResult PostBookTicket(
+            string departureStn, string arrivalStn, string seatClass, string seatBerth, string holderName, string email)
         {
             ViewData["departureStn"] = departureStn;
             ViewData["arrivalStn"] = arrivalStn;
+            ViewData["seatClass"] = seatClass;
+            ViewData["seatBerth"] = seatBerth;
+            ViewData["holderName"] = holderName;
+            ViewData["email"] = email;
+
             return View("ShowTicket");
         }
 
