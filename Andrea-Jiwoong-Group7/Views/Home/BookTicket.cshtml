@@ -4,48 +4,79 @@
 @{
 }
 
-<div class="text-center">
-    <h1 class="display-4">Book Ticket</h1>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Book Ticket</h1>
 
-    <form asp-action="PostBookTicket" method="post">
+            <form asp-action="PostBookTicket" method="post">
 
-        <select id="departureStn" name="departureStn">
-            <option value="Toronto">Toronto</option>
-            <option value="Winnipeg">Winnipeg</option>
-            <option value="Saskatoon">Saskatoon</option>
-            <option value="Edmonton">Edmonton</option>
-            <option value="Jasper">Jasper</option>
-            <option value="Vancouver">Vancouver</option>
-        </select>
+                <div class="form-group">
+                    <label for="departureStn">Departure Station</label>
+                    <select class="form-control" id="departureStn" name="departureStn">
+                        <option value="Toronto">Toronto</option>
+                        <option value="Winnipeg">Winnipeg</option>
+                        <option value="Saskatoon">Saskatoon</option>
+                        <option value="Edmonton">Edmonton</option>
+                        <option value="Jasper">Jasper</option>
+                        <option value="Vancouver">Vancouver</option>
+                    </select>
+                </div>
 
-        <select id="arrivalStn" name="arrivalStn">
-            <option value="Vancouver">Vancouver</option>
-            <option value="Jasper">Jasper</option>
-            <option value="Edmonton">Edmonton</option>
-            <option value="Saskatoon">Saskatoon</option>
-            <option value="Winnipeg">Winnipeg</option>
-            <option value="Toronto">Toronto</option>
-        </select>
+                <div class="form-group">
+                    <label for="arrivalStn">Arrival Station</label>
+                    <select class="form-control" id="arrivalStn" name="arrivalStn">
+                        <option value="Vancouver">Vancouver</option>
+                        <option value="Jasper">Jasper</option>
+                        <option value="Edmonton">Edmonton</option>
+                        <option value="Saskatoon">Saskatoon</option>
+                        <option value="Winnipeg">Winnipeg</option>
+                        <option value="Toronto">Toronto</option>
+                    </select>
+                </div>
 
-        <input name="holderName" id="holderName" />
-        <input name="email" id="email" />
+                <div class="form-group">
+                    <label for="departureDate">Departure Date</label>
+                    <input class="form-control" name="departureDate" id="departureDate" type="date" value="2023-01-01" min="2023-01-01" max="2024-12-31" />
+                </div>
 
-        <select id="seatClass" name="seatClass">
-            <option value="Economy">Economy</option>
-            <option value="Business">Business</option>
-            <option value="Sleeper-Plus">Sleeper-Plus</option>
-            <option value="Prestige">Prestige</option>
-        </select>
+                <div class="form-group">
+                    <label for="holderName">Holder Name</label>
+                    <input class="form-control" name="holderName" id="holderName" />
+                </div>
 
-        <select id="seatBerth" name="seatBerth">
-            <option value="Upper">Upper</option>
-            <option value="Lower">Lower</option>
-            <option value="Corner">Corner</option>
-        </select>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input class="form-control" type="number" name="age" id="age" />
+                </div>
 
-        <button type="submit">Submit</button>
-        <button type="reset">Cancel</button>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" id="email" />
+                </div>
 
-    </form>
+                <div class="form-group">
+                    <label for="seatClass">Seat Class</label>
+                    <select class="form-control" id="seatClass" name="seatClass">
+                        <option value="Economy">Economy</option>
+                        <option value="Business">Business</option>
+                        <option value="Sleeper-Plus">Sleeper-Plus</option>
+                        <option value="Prestige">Prestige</option>
+                    </select>
+                </div>
 
-</div>
+                <div class="form-group">
+                    <label for="seatBerth">Seat Berth</label>
+                    <select class="form-control" id="seatBerth" name="seatBerth">
+                        <option value="Upper">Upper</option>
+                        <option value="Lower">Lower</option>
+                        <option value="Middle">Middle</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Book Ticket</button>
+
+            </form>
+        </div>
+      </div>
+    </div>
