@@ -8,7 +8,7 @@
     <h1 class="display-4">Book Ticket</h1>
 
     <form asp-action="PostBookTicket" method="post">
-        
+
         <select id="departureStn" name="departureStn">
             <option value="Toronto">Toronto</option>
             <option value="Winnipeg">Winnipeg</option>
@@ -18,18 +18,33 @@
             <option value="Vancouver">Vancouver</option>
         </select>
 
-<select id="arrivalStn" name="arrivalStn">
-        <option value="Vancouver">Vancouver</option>
-        <option value="Jasper">Jasper</option>
-        <option value="Edmonton">Edmonton</option>
-        <option value="Saskatoon">Saskatoon</option>
-        <option value="Winnipeg">Winnipeg</option>
-        <option value="Toronto">Toronto</option>
-    </select>
+        <select id="arrivalStn" name="arrivalStn">
+            <option value="Vancouver">Vancouver</option>
+            <option value="Jasper">Jasper</option>
+            <option value="Edmonton">Edmonton</option>
+            <option value="Saskatoon">Saskatoon</option>
+            <option value="Winnipeg">Winnipeg</option>
+            <option value="Toronto">Toronto</option>
+        </select>
 
+        <input name="holderName" id="holderName" />
+        <input name="email" id="email" />
 
-    <button type="submit">Submit</button>
-    <button type="reset">Cancel</button>
+        <select id="seatClass" name="seatClass">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="Sleeper-Plus">Sleeper-Plus</option>
+            <option value="Prestige">Prestige</option>
+        </select>
+
+        <select id="seatBerth" name="seatBerth">
+            <option value="Upper">Upper</option>
+            <option value="Lower">Lower</option>
+            <option value="Corner">Corner</option>
+        </select>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
 
     </form>
 
