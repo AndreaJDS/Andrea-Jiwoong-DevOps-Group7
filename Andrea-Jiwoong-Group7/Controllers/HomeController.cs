@@ -33,12 +33,16 @@ namespace Andrea_Jiwoong_Group7.Controllers
         {
             TrainSchedule ts = new TrainSchedule();
 
+            ViewData["distance"] = ts.GetDistance(departureStn, arrivalStn);
+
+
             ViewData["departureStn"] = departureStn;
             ViewData["arrivalStn"] = arrivalStn;
             ViewData["departureDateAndTime"] = ts.GetDepartureDateAndTime(departureDate, departureStn, arrivalStn);
             ViewData["trainNumber"] = ts.GetTrainNumber(departureStn, arrivalStn);
             ViewData["seatClass"] = seatClass;
             ViewData["seatBerth"] = seatBerth;
+            ViewData["age"] = age;
             ViewData["holderName"] = holderName;
             ViewData["email"] = email;
             ViewData["totalFare"] = ts.FormatTotalFare(ts.GetTotalFare(departureStn, arrivalStn, seatClass, age, numberOfPassengers));

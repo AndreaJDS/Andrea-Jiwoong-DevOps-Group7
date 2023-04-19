@@ -67,7 +67,7 @@ namespace Andrea_Jiwoong_Group7.Models
       
         public double GetTotalFare(string dept, string arrv, string seatClass, int age, int numberOfPassengers)
         {
-            double basicFare = GetDistance(dept, arrv) * 0.01;
+            double basicFare = GetDistance(dept, arrv) * 0.1;
 
             if (seatClass == "Business")
             {
