@@ -57,7 +57,7 @@ steps:
     WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
-    Bindings: 'http/All Unassigned:8087:'
+    Bindings: 'http/*:8087:'
     AppPoolName: ''
   
 
