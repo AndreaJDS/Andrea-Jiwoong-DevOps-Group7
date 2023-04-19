@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Book Ticket</h1>
+
+    <form asp-action="PostBookTicket" method="post">
+        
+        <select id="departureStn" name="departureStn">
+            <option value="Toronto">Toronto</option>
+            <option value="Winnipeg">Winnipeg</option>
+            <option value="Saskatoon">Saskatoon</option>
+            <option value="Edmonton">Edmonton</option>
+            <option value="Jasper">Jasper</option>
+            <option value="Vancouver">Vancouver</option>
+        </select>
+
+<select id="arrivalStn" name="arrivalStn">
+        <option value="Vancouver">Vancouver</option>
+        <option value="Jasper">Jasper</option>
+        <option value="Edmonton">Edmonton</option>
+        <option value="Saskatoon">Saskatoon</option>
+        <option value="Winnipeg">Winnipeg</option>
+        <option value="Toronto">Toronto</option>
+    </select>
+
+
+    <button type="submit">Submit</button>
+    <button type="reset">Cancel</button>
+
+    </form>
+
+</div>
