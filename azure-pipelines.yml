@@ -47,3 +47,21 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
+
+- task: IISWebAppManagementOnMachineGroup@0
+  displayName: 'IIS Web App Manage'
+  inputs:
+    IISDeploymentType: 'IISWebsite'
+    ActionIISWebsite: 'CreateOrUpdateWebsite'
+    WebsiteName: 'TrainTicketApplication'
+    WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
+    WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+    AddBinding: true
+    Bindings: 'http/All Unassigned:8087:'
+  
+- task: IISWebAppDeploymentOnMachineGroup@0
+  displayName: 'IIS Web App Deploy'
+  inputs:
+    WebSiteName: 'Group7-WebApp'
+    TakeAppOfflineFlag: True
+    XmlVariableSubstitution: True
