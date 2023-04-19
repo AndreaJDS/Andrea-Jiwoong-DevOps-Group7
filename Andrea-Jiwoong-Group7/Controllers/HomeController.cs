@@ -23,6 +23,21 @@ namespace Andrea_Jiwoong_Group7.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult BookTicket()
+        {
+            return View("BookTicket");
+        }
+
+        [HttpPost]
+        public IActionResult PostBookTicket(string departureStn, string arrivalStn)
+        {
+            ViewData["departureStn"] = departureStn;
+            ViewData["arrivalStn"] = arrivalStn;
+            return View("ShowTicket");
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
