@@ -58,10 +58,13 @@ steps:
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
     Bindings: 'http/All Unassigned:8087:'
+    AppPoolName: ''
   
+
 - task: IISWebAppDeploymentOnMachineGroup@0
   displayName: 'IIS Web App Deploy'
   inputs:
-    WebSiteName: 'Group7-WebApp'
+    WebSiteName: 'TrainTicketApplication'
     TakeAppOfflineFlag: True
     XmlVariableSubstitution: True
+    
