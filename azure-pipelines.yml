@@ -19,6 +19,13 @@ jobs:
 - job: Build
   displayName: Build Stage
   steps:
+
+  - task: NuGetToolInstaller@1
+
+  - task: NuGetCommand@2
+    inputs:
+      restoreSolution: '$(solution)'
+
   - task: VSBuild@1
     displayName: VS Build
     inputs:
@@ -35,11 +42,19 @@ jobs:
       arguments: '--configuration $(buildConfiguration)'
 
   - task: DotNetCoreCLI@2
-    displayName: DotNet Test
+    displayName: Code Coverage
     inputs:
       command: 'test'
       projects: '**/*Test*.csproj'
-      arguments: '--configuration $(buildConfiguration)'
+      arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
+    continueOnError: true
+
+  - task: PublishCodeCoverageResults@1
+    displayName: Publish Code Coverage
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: '$(Agent.TempDirectory)/coverage.opencover.xml'
+      reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/'
 
   - task: PublishBuildArtifacts@1
     displayName: Publish Build Artifact 
