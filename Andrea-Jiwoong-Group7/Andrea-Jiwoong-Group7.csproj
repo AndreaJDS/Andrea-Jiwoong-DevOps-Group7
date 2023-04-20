@@ -7,4 +7,10 @@
     <RootNamespace>Andrea_Jiwoong_Group7</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
 </Project>
