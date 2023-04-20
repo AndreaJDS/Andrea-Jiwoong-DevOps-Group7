@@ -2,7 +2,7 @@
 
 ## ASP.NET MVC Project README
 ### Overview
-This project is built using ASP.NET MVC, a web application framework developed by Microsoft, and C#, a modern, object-oriented programming language. The application allows users to [add more details about the project here].
+This project is built using ASP.NET MVC, a web application framework developed by Microsoft, and C#, a modern, object-oriented programming language. The application allows users to book a train ticket.
 
 ### Prerequisites
 .NET Framework 6.0
