@@ -59,9 +59,13 @@ jobs:
   - task: SonarCloudPrepare@1
     inputs:
       SonarCloud: 'my-service-connection'
-      organization: 'my-org'
+      organization: 'my-organization1'
       scannerMode: 'CLI'
-      configMode: 'file'
+      configMode: 'manual'
+      cliProjectKey: 'my-project-key1'
+      cliProjectName: 'my-project'
+      cliSources: '.'
+      
   - task: SonarCloudAnalyze@1
   - task: PublishBuildArtifacts@1
     displayName: Publish Build Artifact 
