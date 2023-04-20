@@ -34,8 +34,6 @@ namespace Andrea_Jiwoong_Group7.Controllers
             TrainSchedule ts = new TrainSchedule();
 
             ViewData["distance"] = ts.GetDistance(departureStn, arrivalStn);
-
-
             ViewData["departureStn"] = departureStn;
             ViewData["arrivalStn"] = arrivalStn;
             ViewData["departureDateAndTime"] = ts.GetDepartureDateAndTime(departureDate, departureStn, arrivalStn);
@@ -49,7 +47,6 @@ namespace Andrea_Jiwoong_Group7.Controllers
 
             return View("ShowTicket");
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
