@@ -46,14 +46,14 @@ jobs:
     inputs:
       command: 'test'
       projects: '**/*Test*.csproj'
-      arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
+      arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura'
     continueOnError: true
 
   - task: PublishCodeCoverageResults@1
     displayName: Publish Code Coverage
     inputs:
       codeCoverageTool: 'Cobertura'
-      summaryFileLocation: '$(Agent.TempDirectory)/coverage.opencover.xml'
+      summaryFileLocation: "**/*coverage.cobertura.xml"
       reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/'
 
   - task: PublishBuildArtifacts@1
