@@ -15,7 +15,20 @@ namespace Andrea_Jiwoong_Group7.Models
 		private string email;
 		private int numberOfPassengers;
 
-		public Order() { }
+        public Order(string departureStn, string arrivalStn, DateTime departureDate, string seatClass, string seatBerth, string holderName, int age, string gender, string phone, string email, int numberOfPassengers)
+        {
+            this.departureStn = departureStn;
+            this.arrivalStn = arrivalStn;
+            this.departureDate = departureDate;
+            this.seatClass = seatClass;
+            this.seatBerth = seatBerth;
+            this.holderName = holderName;
+            this.age = age;
+            this.gender = gender;
+            this.phone = phone;
+            this.email = email;
+            this.numberOfPassengers = numberOfPassengers;
+        }
 
         public string DepartureStn { get => departureStn; set => departureStn = value; }
         public string ArrivalStn { get => arrivalStn; set => arrivalStn = value; }
